@@ -1,6 +1,8 @@
 package com.infosupport.springframework.basis;
 
 import com.infosupport.springframework.basis.app.configuration.SpringBeanDefinitions;
+import com.infosupport.springframework.basis.app.services.HitOnceService;
+import com.infosupport.springframework.basis.app.services.HitService;
 import com.infosupport.springframework.basis.app.services.PrinterService;
 import com.infosupport.springframework.basis.app.services.WorkerBeanInNeedOfPrinterService;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,12 +12,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class ExploringJavaConfigApplicationContextTests {
     ApplicationContext applicationContext;
+
     @BeforeEach
-    void setUp(){
-        applicationContext  = new AnnotationConfigApplicationContext(SpringBeanDefinitions.class);
+    void setUp() {
+        applicationContext = new AnnotationConfigApplicationContext(SpringBeanDefinitions.class);
     }
+
     @Test
     void startDeApplicationContext() {
 
@@ -32,7 +38,7 @@ public class ExploringJavaConfigApplicationContextTests {
     @Test
     void getNamesFromApplicationContext() {
         List<String> names = (List<String>) applicationContext.getBean("getNames");
-        for(String name:names){
+        for (String name : names) {
             System.out.println(name);
         }
     }

@@ -17,7 +17,6 @@ public class ExploreSpringClassPathXmlApplicationTests {
     }
     @Test
     void startenVanDeSpringContainerAKASpringContext() {
-
         assertThat(applicationContext).isNotNull();
     }
 
