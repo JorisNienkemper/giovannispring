@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ExploreSpringTests {
+public class ExploreSpringClassPathXmlApplicationTests {
     ApplicationContext applicationContext;
     @BeforeEach
     void setUp(){
