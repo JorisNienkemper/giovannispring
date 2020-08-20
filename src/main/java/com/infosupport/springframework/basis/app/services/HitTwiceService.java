@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier(value = "hitTwice")
+@HitTwice
 @Scope(scopeName = "prototype")
 public class HitTwiceService implements HitService{
     private int hitCount;

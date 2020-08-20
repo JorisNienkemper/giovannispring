@@ -1,7 +1,6 @@
 package com.infosupport.springframework.basis.app.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,11 +8,11 @@ import org.springframework.stereotype.Component;
 @Scope(scopeName = "prototype")
 public class HitBean {
     @Autowired
-    @Qualifier(value = "hitOnce") // singleton scope
+    @HitOnce// singleton scope
     private HitService once;
 
     @Autowired
-    @Qualifier(value = "hitTwice") // prototype scope
+    @HitTwice // prototype scope
     private HitService twice;
 
     public void hitTwice() {
